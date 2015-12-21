@@ -1,0 +1,6 @@
+
+table input[type=date] {
+    border: 0 none;
+    padding: 0;
+    width: 100%;
+}

@@ -1,0 +1,71 @@
+<div class="pane-group">
+    <div class="pane-sm">
+        <form class="padded">
+
+            <div class="form-group">
+                <label for="toggl-api-key">Toggl API key</label>
+                <input type="text" class="form-control" id="toggl-api-key" [ngModel]="togglApiKey" (ngModelChange)="setTogglApiKey($event)">
+            </div>
+
+            <div class="form-group">
+                <label for="project">Project</label>
+                <select name="project" id="project" class="form-control" [(ngModel)]="projectId">
+                    <option *ngFor="#project of projects" [value]="project.id">
+                        {{project.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="hours-per-week">Hours per week</label>
+                <input type="number" class="form-control" id="hours-per-week" [(ngModel)]="hoursPerWeek">
+            </div>
+
+            <div class="form-group">
+                <label for="start-date">Start date</label>
+                <input type="date" class="form-control" id="start-date" [(ngModel)]="startDate">
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="pane">
+        <table class="table-striped">
+            <thead>
+            <tr>
+                <th>Start</th>
+                <th>End</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>
+                    <input type="date">
+                </td>
+                <td>
+                    <input type="date">
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+
+        <footer>
+            <div class="btn-group padded">
+                <button class="btn btn-default" title="Add break">
+                    <span class="icon icon-plus"></span>
+                </button>
+
+                <button class="btn btn-default" title="Remove selected break">
+                    <span class="icon icon-minus"></span>
+                </button>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+
+
